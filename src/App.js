@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import fakeData from './fakeData';
+import Profile from './components/Profile/Profile';
 
 function App() {
+  const first15 = fakeData.slice(0,15);
+  const [user,setUser] = useState(first15);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Total User : {user.length}</h1>
+      <h2>User Added : {} </h2>
+      {
+        user.map(user => <Profile  user ={user} key = {user.id}></Profile>)
+      }
     </div>
   );
 }
