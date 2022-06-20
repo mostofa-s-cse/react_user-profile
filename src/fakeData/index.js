@@ -1,6 +1,6 @@
-import users from './user';
+import userprofile from './user-profile';
 
-const fakeData = [...users];
+const fakeData = [...userprofile];
 
 
 const shuffle = a => {

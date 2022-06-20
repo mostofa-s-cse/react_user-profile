@@ -1,26 +1,26 @@
 import React from 'react';
-
+import './Profile.css'
 
 const Profile = (props) => {
-    const {img,name,email,phone} = props.user;
-    console.log(props.user)
+    const {img,name,email,phone,selary} = props.user;
+    const handleAddUser = props.handleAddUser;
     const btnStyle = {
         width:'150px',
         height:'25px',
         borderRadius: '4px',
         backgroundColor: 'gold',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        marginBottom : '20px'
     }
     return (
-        <div>
-            
+        <div className="profile-container">
             <img src= {img} alt="" />
             <h3>User Name : {name}</h3>
             <p>Phone : {phone}</p>
-            <p>email : {email} </p>
-            <button style={btnStyle}>Add User</button>
+            <p>Email : {email} </p>
+            <p>Selary : $ {selary}</p>
+            <button style={btnStyle} onClick={() => handleAddUser(props.user)}>Add User</button>
             <hr />
-          
         </div>
     );
 };
