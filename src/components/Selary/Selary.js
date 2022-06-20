@@ -11,9 +11,8 @@ const Selary = (props) => {
     // }
     const totalSelary = selary.reduce((sum,user) => sum + user.selary,0)
     return (
-        <div>
-            <h2>User Added : {selary.length} </h2>
-            <h2>Selary Added : $ {totalSelary} </h2>
+        <div className={`bg-dark text-white p-2 text-center`}>
+            <h2>Total Selary : $ {totalSelary} </h2>
         </div>
     );
 };
